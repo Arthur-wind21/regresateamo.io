@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='UTF-8'>
+  <title>TE AMO VAL</title>
+  <style>
+    body { background:#ffffff; color:rgb(0, 0, 0); font-size:2em; font-family:monospace; }
+  </style>
+</head>
+<body>
+  <audio src="https://dl.dropboxusercontent.com/scl/fi/gjooh4gfknq1df3bqjuvb/s1.mp3?rlkey=eljhw2mzgloa8p4opwdqwl21g&st=p5rspqff&" type="audio/mpeg" autoplay hidden></audio>
+  <div id='texto'></div>
+  <script>
+    const msg = ('REGRESA VALERIA\n').repeat(10);
+    let i = 0;
+    function escribir(){
+      if(i < msg.length){
+        // Reemplaza \n por <br> para HTML
+        document.getElementById('texto').innerHTML += msg.charAt(i) === '\n' ? '<br>' : msg.charAt(i);
+        i++;
+        setTimeout(escribir, 40);
+      }
+    }
+    escribir();
+  </script>
+</body>
+</html>
