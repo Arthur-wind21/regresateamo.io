@@ -8,14 +8,14 @@
   </style>
 </head>
 <body>
-  <audio src="https://dl.dropboxusercontent.com/scl/fi/gjooh4gfknq1df3bqjuvb/s1.mp3?rlkey=eljhw2mzgloa8p4opwdqwl21g&st=p5rspqff&" type="audio/mpeg" autoplay hidden></audio>
+  <audio id="musica" src="https://dl.dropboxusercontent.com/scl/fi/gjooh4gfknq1df3bqjuvb/s1.mp3?rlkey=eljhw2mzgloa8p4opwdqwl21g&st=p5rspqff&" type="audio/mpeg"></audio>
+  <button onclick="document.getElementById('musica').play(); this.style.display='none';">Haz clic para escuchar la música</button>
   <div id='texto'></div>
   <script>
     const msg = ('REGRESA VALERIA\n').repeat(10);
     let i = 0;
     function escribir(){
       if(i < msg.length){
-        // Reemplaza \n por <br> para HTML
         document.getElementById('texto').innerHTML += msg.charAt(i) === '\n' ? '<br>' : msg.charAt(i);
         i++;
         setTimeout(escribir, 40);
@@ -25,3 +25,4 @@
   </script>
 </body>
 </html>
+
